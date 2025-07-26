@@ -1,0 +1,50 @@
+
+
+
+
+# GITHUB ACTIONS WORKFLOW TO RUN DIJKSTRA LAB SCRIPT
+
+
+
+
+name: DIJKSTRA LAB TEST
+
+
+
+
+
+# TRIGGER WORKFLOW ON PUSH TO MAIN BRANCH
+
+
+
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  run-dijkstra:
+
+
+
+
+
+
+    # DEFINE THE OPERATING SYSTEM ENVIRONMENT
+
+
+
+
+
+    runs-on: ubuntu-latest
+    steps:
+    - name: CHECKOUT REPOSITORY
+      uses: actions/checkout@v4
+
+    - name: SET UP PYTHON ENVIRONMENT
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: RUN THE DIJKSTRA LAB SCRIPT
+      run: python FINAL.py
